@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-color: #0f0f1a;
+            color: #e8e4d6;
+        }
+
+        header {
+            background-image: url('kontakt-hero.jpg'); /* Zamenjajte s pravo potjo slike */
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #f5c842;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 0 0 15px #000;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #f5c842;
+            margin-bottom: 20px;
+        }
+
+        .content form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content form input,
+        .content form textarea,
+        .content form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1c1c2e;
+            color: #e8e4d6;
+        }
+
+        .content form button {
+            background-color: #f5c842;
+            color: #0f0f1a;
+            cursor: pointer;
+            font-weight: bold;
+        }
+.home-button {
+    position: absolute;
+    top: 20px; /* Razdalja od vrha */
+    right: 20px; /* Razdalja od desnega roba */
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    color: #f5c842;
+    text-decoration: none;
+    border: 2px solid #f5c842;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #f5c842;
+    color: #0f0f1a;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+<a href="index.html" class="home-button">Domov</a>
+
+        <h1>Kontakt</h1>
+    </header>
+
+    <div class="content">
+        <h2>Stopite v stik</h2>
+<form action="process-form.php" method="POST">
+    <input type="text" name="name" placeholder="Vaše ime" required>
+    <input type="email" name="email" placeholder="Vaš email" required>
+    <textarea name="message" rows="5" placeholder="Vaše sporočilo" required></textarea>
+    <button type="submit">Pošlji</button>
+</form>
+
+    </div>
+</body>
+</html>

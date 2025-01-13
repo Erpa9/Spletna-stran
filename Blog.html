@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Potovanje skozi sledi človeštva</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-color: #0f0f1a;
+            color: #e8e4d6;
+        }
+
+        header {
+            background-image: url('blog-hero.jpg'); /* Zamenjajte s pravo potjo slike */
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #f5c842;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 0 0 15px #000;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            text-shadow: 0 0 10px #000;
+        }
+
+        .blog-table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-spacing: 20px;
+            color: #e8e4d6;
+        }
+
+        .blog-table th {
+            text-align: center;
+            font-size: 1.8em;
+            color: #f5c842;
+            border-bottom: 2px solid #f5c842;
+            padding-bottom: 10px;
+        }
+
+        .blog-table td {
+            vertical-align: top;
+            text-align: center;
+            padding: 20px;
+            background-color: #1c1c2e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card h3 {
+            color: #f5c842;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2; /* Besedilo naj bo nad sliko */
+        }
+
+        .blog-card p {
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2; /* Besedilo naj bo nad sliko */
+        }
+
+        .blog-card .blog-image {
+            position: absolute;
+            top: 10px; /* Rahlo premaknjeno navzdol */
+            left: 10px; /* Rahlo premaknjeno v desno */
+            width: 90%; /* Slika zavzame manj prostora */
+            height: 80%; /* Višina slike prilagojena */
+            object-fit: cover;
+            opacity: 0;
+            border-radius: 10px; /* Zaokroženi robovi slike */
+            transition: opacity 0.5s ease; /* Podaljšana animacija za bolj gladek prehod */
+            z-index: 1; /* Slika je pod besedilom */
+        }
+
+        .blog-card:hover .blog-image {
+            opacity: 0.7; /* Slika postane vidna ob hoverju */
+        }
+
+        .blog-card:hover h3,
+        .blog-card:hover p {
+            color: #e8e4d6; /* Sprememba barve besedila za več kontrasta */
+        }
+.home-button {
+    position: absolute;
+    top: 20px; /* Razdalja od vrha */
+    right: 20px; /* Razdalja od desnega roba */
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    color: #f5c842;
+    text-decoration: none;
+    border: 2px solid #f5c842;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #f5c842;
+    color: #0f0f1a;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+<a href="index.html" class="home-button">Domov</a>
+
+        <h1>Dobrodošli na mojem blogu</h1>
+        <p>Raziskovanje mitov, arhetipov in starodavnih zgodb.</p>
+    </header>
+
+    <table class="blog-table">
+        <thead>
+            <tr>
+                <th>Svetopisemske zgodbe</th>
+                <th>Arhetipi</th>
+                <th>Zgodovina</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="blog-card">
+                        <img class="blog-image" src="bible-story1.JPG" alt="Slika zgodbe 1">
+                        <h3>Zgodba 1</h3>
+                        <p>Kratek opis zgodbe.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="blog-card">
+                        <img class="blog-image" src="archetype1.jpg" alt="Slika arhetipa 1">
+                        <h3>Arhetip 1</h3>
+                        <p>Kratek opis arhetipa.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="blog-card">
+                        <img class="blog-image" src="history1.jpg" alt="Slika zgodovine 1">
+                        <h3>Zgodovina 1</h3>
+                        <p>Kratek opis zgodovinske teme.</p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
