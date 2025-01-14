@@ -64,44 +64,48 @@
             cursor: pointer;
             font-weight: bold;
         }
-.home-button {
-    position: absolute;
-    top: 20px; /* Razdalja od vrha */
-    right: 20px; /* Razdalja od desnega roba */
-    padding: 10px 20px;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-    color: #f5c842;
-    text-decoration: none;
-    border: 2px solid #f5c842;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
 
-.home-button:hover {
-    background-color: #f5c842;
-    color: #0f0f1a;
-}
+        .home-button {
+            position: absolute;
+            top: 20px; /* Razdalja od vrha */
+            right: 20px; /* Razdalja od desnega roba */
+            padding: 10px 20px;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+            color: #f5c842;
+            text-decoration: none;
+            border: 2px solid #f5c842;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
 
+        .home-button:hover {
+            background-color: #f5c842;
+            color: #0f0f1a;
+        }
+
+        /* Honeypot field */
+        .honeypot {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <header>
-<a href="index.html" class="home-button">Domov</a>
-
+        <a href="index.html" class="home-button">Domov</a>
         <h1>Kontakt</h1>
     </header>
 
     <div class="content">
         <h2>Stopite v stik</h2>
-<form action="https://formspree.io/f/xwppynor" method="POST">
-    <input type="text" name="name" placeholder="Vaše ime" required>
-    <input type="email" name="email" placeholder="Vaš email" required>
-    <textarea name="message" rows="5" placeholder="Vaše sporočilo" required></textarea>
-    <button type="submit">Pošlji</button>
-</form>
-
+        <form action="https://formspree.io/f/xwppynor" method="POST">
+            <input type="text" name="name" placeholder="Vaše ime" required>
+            <input type="email" name="email" placeholder="Vaš email" required>
+            <textarea name="message" rows="5" placeholder="Vaše sporočilo" required></textarea>
+            <input type="text" name="honeypot" class="honeypot">
+            <button type="submit">Pošlji</button>
+        </form>
     </div>
 </body>
 </html>
