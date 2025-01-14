@@ -9,37 +9,39 @@
             margin: 0;
             padding: 0;
             font-family: 'Georgia', serif;
-            background-color: #0f0f1a;
-            color: #e8e4d6;
+            color: #000;
+            background-image: url('pergament.jpg'); /* Pot do slike pergamenta */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         header {
-            background-image: url('kontakt-hero.jpg'); /* Zamenjajte s pravo potjo slike */
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.8); /* Svetel preliv za hero sekcijo */
+            padding: 50px 20px;
             text-align: center;
-            color: #f5c842;
         }
 
         header h1 {
             font-size: 3em;
+            color: #5a3e1a; /* Temna barva za tekst, ki ustreza pergamentu */
             margin: 0;
-            text-shadow: 0 0 15px #000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
         }
 
         .content {
             max-width: 600px;
-            margin: 20px auto; /* Manjši razmik od vrha */
+            margin: 40px auto;
             text-align: center;
+            background: rgba(255, 255, 255, 0.9); /* Bela podlaga za obrazec */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         .content h2 {
-            color: #f5c842;
-            margin-bottom: 15px; /* Manjši razmik med naslovom in obrazcem */
+            color: #5a3e1a; /* Enaka temna barva */
+            margin-bottom: 20px;
         }
 
         .content form {
@@ -52,42 +54,42 @@
         .content form button {
             margin-bottom: 15px;
             padding: 10px;
-            border: none;
+            border: 2px solid #5a3e1a;
             border-radius: 5px;
-            background-color: #1c1c2e;
-            color: #e8e4d6;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #5a3e1a;
+            font-size: 1em;
         }
 
         .content form button {
-            background-color: #f5c842;
-            color: #0f0f1a;
+            background-color: #5a3e1a;
+            color: #fff;
             cursor: pointer;
             font-weight: bold;
         }
 
+        .content form button:hover {
+            background-color: #a66d3e;
+        }
+
         .home-button {
             position: absolute;
-            top: 20px; /* Razdalja od vrha */
-            right: 20px; /* Razdalja od desnega roba */
+            top: 20px;
+            right: 20px;
             padding: 10px 20px;
             font-size: 1em;
             font-family: 'Arial', sans-serif;
-            color: #f5c842;
+            color: #5a3e1a;
             text-decoration: none;
-            border: 2px solid #f5c842;
+            border: 2px solid #5a3e1a;
             border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.8);
             transition: all 0.3s ease;
         }
 
         .home-button:hover {
-            background-color: #f5c842;
-            color: #0f0f1a;
-        }
-
-        /* Honeypot field */
-        .honeypot {
-            display: none;
+            background-color: #5a3e1a;
+            color: #fff;
         }
     </style>
 </head>
