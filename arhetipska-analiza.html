@@ -14,76 +14,162 @@
         }
 
         header {
-
-            background-image: url('arhetipska-hero.jpg'); /* Zamenjajte s pravo potjo slike */
+            position: relative;
+            background-image: url('Arhetipska.jpg'); /* Pot do slike za hero sekcijo */
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            color: #f5c842;
+            padding: 20px;
         }
 
-        header h1 {
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Temnejši preliv za boljšo vidnost teksta */
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            z-index: 2;
+            gap: 70px; /* Dodan večji razmik med sekcijama */
+        }
+
+        .text-content {
+            flex: 1;
+            color: #f5c842;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .text-content h1 {
             font-size: 3em;
             margin: 0;
             text-shadow: 0 0 15px #000;
         }
 
-        .content {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: justify;
-            line-height: 1.8;
+        .text-content p {
+            font-size: 1.2em;
+            margin-top: 20px; /* Več prostora pod naslovom */
+            text-shadow: 0 0 10px #000;
         }
 
-        .content h2 {
+        .form-content {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-content h2 {
             color: #f5c842;
-        }
-
-        .content p {
             margin-bottom: 20px;
+            text-align: center;
         }
-.home-button {
-    position: absolute;
-    top: 20px; /* Razdalja od vrha */
-    right: 20px; /* Razdalja od desnega roba */
-    padding: 10px 20px;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-    color: #f5c842;
-    text-decoration: none;
-    border: 2px solid #f5c842;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
 
-.home-button:hover {
-    background-color: #f5c842;
-    color: #0f0f1a;
-}
+        .form-content form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .form-content form input,
+        .form-content form textarea,
+        .form-content form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1c1c2e;
+            color: #e8e4d6;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-content form button {
+            background-color: #f5c842;
+            color: #0f0f1a;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .date-fields {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .date-fields input {
+            flex: 1;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+            color: #f5c842;
+            text-decoration: none;
+            border: 2px solid #f5c842;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .home-button:hover {
+            background-color: #f5c842;
+            color: #0f0f1a;
+        }
+
+        /* Honeypot field */
+        .honeypot {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <header>
-<a href="index.html" class="home-button">Domov</a>
-
-        <h1>Arhetipska analiza</h1>
+        <a href="index.html" class="home-button">Domov</a>
+        <div class="container">
+            <div class="text-content">
+                <h1>Arhetipska analiza</h1>
+                <p>
+                    Arhetipska analiza je raziskovanje simbolnih vzorcev in značilnosti, ki so vtkane v našo osebnost in življenje.
+                    Na podlagi vaših podatkov lahko odkrijemo globlje vpoglede v vašo osebno zgodbo in notranje vzorce.
+                </p>
+            </div>
+            <div class="form-content">
+                <h2>Izpolnite obrazec za analizo</h2>
+                <form action="https://formspree.io/f/xwppynor" method="POST">
+                    <input type="text" name="name" placeholder="Vaše ime" required>
+                    <input type="email" name="email" placeholder="Vaš email" required>
+                    <label for="birth-date" style="color: #f5c842;">Datum rojstva:</label>
+                    <div class="date-fields">
+                        <input type="number" name="birth-day" placeholder="Dan" min="1" max="31" required>
+                        <input type="number" name="birth-month" placeholder="Mesec" min="1" max="12" required>
+                        <input type="number" name="birth-year" placeholder="Leto" min="1900" max="2025" required>
+                    </div>
+                    <textarea name="arhetip" rows="5" placeholder="Vaša vprašanja ali podatki za analizo" required></textarea>
+                    <input type="text" name="honeypot" class="honeypot">
+                    <button type="submit">Pošlji za analizo</button>
+                </form>
+            </div>
+        </div>
     </header>
-
-    <div class="content">
-        <h2>Raziskovanje arhetipov</h2>
-        <p>
-            Arhetipi so univerzalni vzorci in simboli, ki se pojavljajo v mitih, sanjah, umetnosti in literaturi.
-            Jungova psihologija opisuje arhetipe kot "kolektivno nezavedno" in njihovo ključno vlogo pri oblikovanju človeških izkušenj.
-        </p>
-        <p>
-            Skozi zgodovino so arhetipi služili kot ogledalo človeškega obstoja, od herojev in božanstev do senc in junakov.
-        </p>
-    </div>
 </body>
 </html>
