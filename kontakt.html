@@ -14,33 +14,47 @@
         }
 
         header {
-            background-image: url('pergament.jpg'); /* Pot do hero slike */
+            position: relative;
+            background-image: url('kontakt-hero.jpg'); /* Pot do hero slike */
             background-size: cover;
             background-position: center;
-            height: 40vh;
+            height: 60vh; /* Višina hero sekcije */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #f5c842;
-            padding: 10px;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, #0f0f1a 100%); /* Fade efekt */
+            z-index: 1;
         }
 
         header h1 {
             font-size: 3em;
             margin: 0;
             text-shadow: 0 0 15px #000;
+            z-index: 2;
+            position: relative;
         }
 
         .content {
             max-width: 600px;
-            margin: 10px auto; /* Zmanjšan razmik med header in obrazcem */
+            margin: -40px auto 40px; /* Dvig obrazca bližje sliki */
             text-align: center;
+            z-index: 2;
         }
 
         .content h2 {
             color: #f5c842;
-            margin-bottom: 10px; /* Manjši razmik med "Stopite v stik" in obrazcem */
+            margin-bottom: 10px;
         }
 
         .content form {
@@ -89,7 +103,7 @@
 
         .home-button {
             position: absolute;
-            top: 10px; /* Manjši razmik */
+            top: 10px;
             right: 20px;
             padding: 10px 20px;
             font-size: 1em;
