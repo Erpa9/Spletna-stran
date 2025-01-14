@@ -140,6 +140,48 @@
         .honeypot {
             display: none;
         }
+
+        /* Medijske poizvedbe za mobilne naprave */
+        @media (max-width: 768px) {
+            header {
+                height: 70vh;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .text-content {
+                text-align: center;
+                margin-left: 0;
+            }
+
+            .text-content h1 {
+                font-size: 2em;
+            }
+
+            .text-content p {
+                font-size: 1em;
+            }
+
+            .form-content {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .form-content form input,
+            .form-content form textarea,
+            .form-content form button {
+                max-width: 100%;
+                width: 90%;
+            }
+
+            .home-button {
+                font-size: 0.8em;
+                padding: 8px 15px;
+            }
+        }
     </style>
 </head>
 <body>
