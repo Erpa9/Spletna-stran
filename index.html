@@ -43,6 +43,8 @@
             display: flex;
             gap: 30px;
             margin-top: 10px; /* Premik gumbov nižje */
+            flex-wrap: wrap; /* Omogoča zavijanje gumbov na manjših zaslonih */
+            justify-content: center;
         }
 
         nav a {
@@ -67,10 +69,51 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.8);
             color: #f5c842;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             font-size: 1em;
+        }
+
+        /* Medijske poizvedbe za mobilne naprave */
+        @media (max-width: 768px) {
+            header {
+                height: 70vh; /* Manjša višina na manjših zaslonih */
+                padding-top: 10%;
+            }
+
+            header h1 {
+                font-size: 2em; /* Manjši naslov na mobilnih napravah */
+            }
+
+            header p {
+                font-size: 1em; /* Manjša pisava za podnaslov */
+            }
+
+            nav a {
+                font-size: 1em; /* Manjši gumbi */
+                padding: 8px 15px; /* Manjša razdalja znotraj gumbov */
+            }
+
+            footer {
+                font-size: 0.8em; /* Manjša pisava za footer */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em; /* Še manjši naslov za zelo majhne zaslone */
+            }
+
+            header p {
+                font-size: 0.9em; /* Manjša pisava za podnaslov */
+            }
+
+            nav {
+                gap: 15px; /* Manjša razdalja med gumbi */
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 6px 12px; /* Kompaktni gumbi */
+            }
         }
     </style>
 </head>
