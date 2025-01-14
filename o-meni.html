@@ -14,15 +14,16 @@
         }
 
         header {
-            background-image: url('o-meni-hero.jpg'); /* Zamenjajte s pravo potjo slike */
+            background-image: url('o-meni.jpg'); /* Pot do slike hero sekcije */
             background-size: cover;
             background-position: center;
             height: 50vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Poravnava proti spodnjem delu */
             text-align: center;
             color: #f5c842;
+            padding-bottom: 20px; /* Razmik med sliko in besedilom */
         }
 
         header h1 {
@@ -40,37 +41,37 @@
 
         .content h2 {
             color: #f5c842;
+            margin-bottom: 20px;
         }
 
         .content p {
             margin-bottom: 20px;
         }
-.home-button {
-    position: absolute;
-    top: 20px; /* Razdalja od vrha */
-    right: 20px; /* Razdalja od desnega roba */
-    padding: 10px 20px;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-    color: #f5c842;
-    text-decoration: none;
-    border: 2px solid #f5c842;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
 
-.home-button:hover {
-    background-color: #f5c842;
-    color: #0f0f1a;
-}
+        .home-button {
+            position: absolute;
+            top: 20px; /* Razdalja od vrha */
+            right: 20px; /* Razdalja od desnega roba */
+            padding: 10px 20px;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+            color: #f5c842;
+            text-decoration: none;
+            border: 2px solid #f5c842;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
 
+        .home-button:hover {
+            background-color: #f5c842;
+            color: #0f0f1a;
+        }
     </style>
 </head>
 <body>
     <header>
-<a href="index.html" class="home-button">Domov</a>
-
+        <a href="index.html" class="home-button">Domov</a>
         <h1>O meni</h1>
     </header>
 
