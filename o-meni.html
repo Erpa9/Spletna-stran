@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
+    <title>O meni</title>
     <style>
         body {
             margin: 0;
@@ -14,99 +14,59 @@
         }
 
         header {
-            background-image: url('pergament.jpg'); /* Pot do slike */
+            background-image: url('o-meni.jpg'); /* Pot do slike hero sekcije */
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Poravnava proti spodnjem delu */
+            text-align: center;
+            color: #f5c842;
+            padding-bottom: 20px; /* Razmik med sliko in besedilom */
             position: relative;
         }
 
         header::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 30%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0f0f1a 100%);
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Preliv za boljšo vidnost teksta */
+            z-index: 1;
         }
 
         header h1 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             font-size: 3em;
-            color: #f5c842;
+            margin: 0;
             text-shadow: 0 0 15px #000;
+            position: relative;
+            z-index: 2; /* Besedilo nad prelivom */
         }
 
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: justify;
+            line-height: 1.8;
+            padding: 0 20px; /* Dodaten notranji odmik za mobilne naprave */
         }
 
-        .form-container {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .form-container h2 {
-            text-align: center;
+        .content h2 {
             color: #f5c842;
             margin-bottom: 20px;
         }
 
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .form-container form input,
-        .form-container form textarea,
-        .form-container form button {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #1c1c2e;
-            color: #e8e4d6;
-            font-size: 1em;
-        }
-
-        .form-container form button {
-            background-color: #f5c842;
-            color: #0f0f1a;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .social-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #f5c842;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.2em;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
+        .content p {
+            margin-bottom: 20px;
         }
 
         .home-button {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 20px; /* Razdalja od vrha */
+            right: 20px; /* Razdalja od desnega roba */
             padding: 10px 20px;
             font-size: 1em;
             font-family: 'Arial', sans-serif;
@@ -116,6 +76,7 @@
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+            z-index: 3; /* Nad prelivom */
         }
 
         .home-button:hover {
@@ -123,34 +84,37 @@
             color: #0f0f1a;
         }
 
-        /* Media Queries for Mobile */
+        /* Prilagoditve za manjše zaslone */
         @media (max-width: 768px) {
             header {
-                height: 60vh;
+                height: 40vh; /* Manjša višina na manjših zaslonih */
             }
 
             header h1 {
-                font-size: 2em;
+                font-size: 2.5em; /* Manjši naslov na mobilnih napravah */
             }
 
-            .form-container {
-                padding: 15px;
-                width: 90%;
-            }
-
-            .form-container form input,
-            .form-container form textarea,
-            .form-container form button {
-                font-size: 1em;
-            }
-
-            .social-links a {
-                font-size: 1em;
+            .content {
+                padding: 0 15px; /* Manjši notranji odmik */
             }
 
             .home-button {
-                font-size: 0.9em;
+                font-size: 0.9em; /* Manjši gumb */
                 padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                height: 30vh; /* Še manjša višina za zelo majhne zaslone */
+            }
+
+            header h1 {
+                font-size: 2em; /* Še manjši naslov */
+            }
+
+            .content {
+                padding: 0 10px;
             }
         }
     </style>
@@ -158,25 +122,18 @@
 <body>
     <header>
         <a href="index.html" class="home-button">Domov</a>
-        <h1>Kontakt</h1>
+        <h1>O meni</h1>
     </header>
 
     <div class="content">
-        <div class="form-container">
-            <h2>Stopite v stik</h2>
-            <form action="https://formspree.io/f/xwppynor" method="POST">
-                <input type="text" name="name" placeholder="Vaše ime" required>
-                <input type="email" name="email" placeholder="Vaš email" required>
-                <textarea name="message" rows="5" placeholder="Vaše sporočilo" required></textarea>
-                <button type="submit">Pošlji</button>
-            </form>
-        </div>
-
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
+        <h2>Kdo sem?</h2>
+        <p>
+            Sem raziskovalec starodavnih mitov, zgodb in arhetipov. Skozi svojo raziskovalno pot skušam
+            povezovati preteklost s sedanjostjo in odkrivati globoke resnice človeške narave.
+        </p>
+        <p>
+            Na tej spletni strani delim svoje vpoglede, analize in navdihujoče zgodbe iz sveta mitologije, zgodovine in psihe.
+        </p>
     </div>
 </body>
 </html>
