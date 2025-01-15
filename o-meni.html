@@ -14,16 +14,17 @@
         }
 
         header {
-            background-image: url('o-meni.jpg'); /* Pot do slike hero sekcije */
+            background-image: url('pergament.jpg'); /* Pot do slike hero sekcije */
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 100vh; /* Hero sekcija pokriva celoten zaslon */
             display: flex;
-            justify-content: center;
-            align-items: flex-end; /* Poravnava proti spodnjem delu */
+            flex-direction: column;
+            justify-content: flex-start; /* Poravnava proti vrhu */
+            align-items: center;
             text-align: center;
             color: #f5c842;
-            padding-bottom: 20px; /* Razmik med sliko in besedilom */
+            padding-top: 50px; /* Razmik od vrha */
             position: relative;
         }
 
@@ -40,27 +41,21 @@
 
         header h1 {
             font-size: 3em;
-            margin: 0;
+            margin: 0 0 20px; /* Razmik pod glavnim naslovom */
             text-shadow: 0 0 15px #000;
             position: relative;
             z-index: 2; /* Besedilo nad prelivom */
         }
 
-        .content {
+        header p {
+            font-size: 1.2em;
             max-width: 800px;
-            margin: 40px auto;
-            text-align: justify;
+            margin: 0 auto; /* Centriranje besedila */
+            text-shadow: 0 0 10px #000;
+            position: relative;
+            z-index: 2;
             line-height: 1.8;
-            padding: 0 20px; /* Dodaten notranji odmik za mobilne naprave */
-        }
-
-        .content h2 {
-            color: #f5c842;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            margin-bottom: 20px;
+            padding: 0 20px; /* Dodaten notranji odmik za manjše zaslone */
         }
 
         .home-button {
@@ -86,16 +81,12 @@
 
         /* Prilagoditve za manjše zaslone */
         @media (max-width: 768px) {
-            header {
-                height: 40vh; /* Manjša višina na manjših zaslonih */
-            }
-
             header h1 {
                 font-size: 2.5em; /* Manjši naslov na mobilnih napravah */
             }
 
-            .content {
-                padding: 0 15px; /* Manjši notranji odmik */
+            header p {
+                font-size: 1em; /* Manjša pisava za opis */
             }
 
             .home-button {
@@ -105,16 +96,12 @@
         }
 
         @media (max-width: 480px) {
-            header {
-                height: 30vh; /* Še manjša višina za zelo majhne zaslone */
-            }
-
             header h1 {
                 font-size: 2em; /* Še manjši naslov */
             }
 
-            .content {
-                padding: 0 10px;
+            header p {
+                font-size: 0.9em; /* Manjša pisava za opis */
             }
         }
     </style>
@@ -123,17 +110,11 @@
     <header>
         <a href="index.html" class="home-button">Domov</a>
         <h1>O meni</h1>
-    </header>
-
-    <div class="content">
-        <h2>Kdo sem?</h2>
         <p>
             Sem raziskovalec starodavnih mitov, zgodb in arhetipov. Skozi svojo raziskovalno pot skušam
-            povezovati preteklost s sedanjostjo in odkrivati globoke resnice človeške narave.
+            povezovati preteklost s sedanjostjo in odkrivati globoke resnice človeške narave. Na tej spletni
+            strani delim svoje vpoglede, analize in navdihujoče zgodbe iz sveta mitologije, zgodovine in psihe.
         </p>
-        <p>
-            Na tej spletni strani delim svoje vpoglede, analize in navdihujoče zgodbe iz sveta mitologije, zgodovine in psihe.
-        </p>
-    </div>
+    </header>
 </body>
 </html>
