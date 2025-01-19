@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Potovanje skozi sledi človeštva</title>
+    <title>Arhetipska analiza</title>
     <style>
         body {
             margin: 0;
@@ -14,113 +14,126 @@
         }
 
         header {
-            background-image: url('blog-hero.jpg'); /* Zamenjajte s pravo potjo slike */
+            position: relative;
+            background-image: url('Arhetipska.jpg'); /* Pot do slike za hero sekcijo */
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 20px;
             text-align: center;
-            color: #f5c842;
         }
 
-        header h1 {
-            font-size: 3em;
-            margin: 0;
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .text-content {
+            color: #f5c842;
+            padding: 20px;
+        }
+
+        .text-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
             text-shadow: 0 0 15px #000;
         }
 
-        header p {
-            font-size: 1.2em;
-            margin: 10px 0 0;
+        .text-content p {
+            font-size: 1.4em;
             text-shadow: 0 0 10px #000;
+            line-height: 1.6;
         }
 
-        .blog-table {
-            width: 100%;
-            max-width: 1200px;
-            margin: 40px auto;
-            border-spacing: 20px;
-            color: #e8e4d6;
-        }
-
-        .blog-table th {
-            text-align: center;
-            font-size: 1.8em;
-            color: #f5c842;
-            border-bottom: 2px solid #f5c842;
-            padding-bottom: 10px;
-        }
-
-        .blog-table td {
-            vertical-align: top;
-            text-align: center;
-            padding: 20px;
-            background-color: #1c1c2e;
+        .form-content {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .blog-card {
-            position: relative;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .blog-card h3 {
+        .form-content h2 {
             color: #f5c842;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2; /* Besedilo naj bo nad sliko */
+            margin-bottom: 20px;
         }
 
-        .blog-card p {
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2; /* Besedilo naj bo nad sliko */
+        .form-content form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .blog-card .blog-image {
-            position: absolute;
-            top: 10px; /* Rahlo premaknjeno navzdol */
-            left: 10px; /* Rahlo premaknjeno v desno */
-            width: 90%; /* Slika zavzame manj prostora */
-            height: 80%; /* Višina slike prilagojena */
-            object-fit: cover;
-            opacity: 0;
-            border-radius: 10px; /* Zaokroženi robovi slike */
-            transition: opacity 0.5s ease; /* Podaljšana animacija za bolj gladek prehod */
-            z-index: 1; /* Slika je pod besedilom */
+        .form-content form input,
+        .form-content form textarea,
+        .form-content form button {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1c1c2e;
+            color: #e8e4d6;
+            width: 100%;
+            max-width: 400px;
+            font-size: 1em;
         }
 
-        .blog-card:hover .blog-image {
-            opacity: 0.7; /* Slika postane vidna ob hoverju */
+        .form-content form button {
+            background-color: #f5c842;
+            color: #0f0f1a;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
-        .blog-card:hover h3,
-        .blog-card:hover p {
-            color: #e8e4d6; /* Sprememba barve besedila za več kontrasta */
+        .form-content form button:hover {
+            background-color: #e0b02f;
+        }
+
+        .date-fields {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .date-fields input {
+            flex: 1;
         }
 
         .home-button {
             position: absolute;
-            top: 20px; /* Razdalja od vrha */
-            right: 20px; /* Razdalja od desnega roba */
+            top: 20px;
+            left: 20px;
             padding: 10px 20px;
             font-size: 1em;
-            font-family: 'Arial', sans-serif;
             color: #f5c842;
             text-decoration: none;
             border: 2px solid #f5c842;
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+            z-index: 3;
         }
 
         .home-button:hover {
@@ -128,93 +141,42 @@
             color: #0f0f1a;
         }
 
-        /* Medijske poizvedbe za mobilne naprave */
-        @media (max-width: 768px) {
-            header {
-                height: 30vh;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .blog-table {
-                width: 90%;
-                margin: 20px auto;
-                border-spacing: 10px;
-            }
-
-            .blog-table th {
-                font-size: 1.5em;
-            }
-
-            .blog-table td {
-                padding: 10px;
-            }
-
-            .blog-card {
-                padding: 10px;
-            }
-
-            .blog-card .blog-image {
-                width: 100%;
-                height: 70%;
-                top: 0;
-                left: 0;
-            }
-
-            .home-button {
-                top: 10px;
-                right: 10px;
-                font-size: 0.8em;
-            }
+        /* Honeypot field */
+        .honeypot {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html" class="home-button">Domov</a>
-        <h1>Dobrodošli na mojem blogu</h1>
-        <p>Raziskovanje mitov, arhetipov in starodavnih zgodb.</p>
+        <div class="container">
+            <div class="text-content">
+                <h1>Arhetipska analiza</h1>
+                <p>
+                    Raziščite arhetipe in odkrijte skrite vzorce vaše osebnosti skozi prizmo kolektivnega nezavednega. 
+                    S pomočjo arhetipske analize in spoznanj Carla Gustava Junga lahko globlje razumete pomen svojih sanj, 
+                    prepoznate svojo senco in odkrijete notranje mehanizme, ki vplivajo na vaše življenje. 
+                    Raziščite svoje nezavedno in odklenite svoj resnični potencial!
+                </p>
+            </div>
+            <div class="form-content">
+                <h2>Izpolnite obrazec za analizo</h2>
+                <form action="https://formspree.io/f/xwppynor" method="POST">
+                    <input type="text" name="name" placeholder="Vaše ime" required>
+                    <input type="email" name="email" placeholder="Vaš email" required>
+                    <label for="birth-date" style="color: #f5c842;">Datum rojstva:</label>
+                    <div class="date-fields">
+                        <input type="number" name="birth-day" placeholder="Dan" min="1" max="31" required>
+                        <input type="number" name="birth-month" placeholder="Mesec" min="1" max="12" required>
+                        <input type="number" name="birth-year" placeholder="Leto" min="1900" max="2025" required>
+                    </div>
+                    <textarea name="arhetip" rows="5" placeholder="Vaša vprašanja ali podatki za analizo" required></textarea>
+                    <input type="text" name="honeypot" class="honeypot">
+                    <button type="submit">Pošlji za analizo</button>
+                </form>
+            </div>
+        </div>
     </header>
-
-    <table class="blog-table">
-        <thead>
-            <tr>
-                <th>Svetopisemske zgodbe</th>
-                <th>Arhetipi</th>
-                <th>Eseji</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="blog-card">
-                        <img class="blog-image" src="bible-story1.JPG" alt="Slika zgodbe 1">
-                        <h3>Zgodba 1</h3>
-                        <p>Kratek opis zgodbe.</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="blog-card">
-                        <img class="blog-image" src="archetype1.jpg" alt="Slika arhetipa 1">
-                        <h3>Arhetip 1</h3>
-                        <p>Kratek opis arhetipa.</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="blog-card">
-                        <img class="blog-image" src="history1.jpg" alt="Slika eseja 1">
-                        <h3>Esej 1</h3>
-                        <p>Kratek opis eseja.</p>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </body>
 </html>
