@@ -11,11 +11,12 @@
             font-family: 'Georgia', serif;
             background-color: #0f0f1a;
             color: #e8e4d6;
+            line-height: 1.6;
         }
 
         header {
             position: relative;
-            background-image: url('Arhetipska.jpg'); /* Pot do slike za hero sekcijo */
+            background-image: url('Arhetipska.jpg'); /* Pot do slike */
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -32,7 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Temnejši preliv za boljšo vidnost teksta */
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
 
@@ -41,28 +42,26 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            width: 100%;
             max-width: 1200px;
+            width: 100%;
+            gap: 50px;
             z-index: 2;
-            gap: 70px; /* Dodan večji razmik med sekcijama */
         }
 
         .text-content {
             flex: 1;
             color: #f5c842;
-            margin-left: 20px;
             text-align: left;
         }
 
         .text-content h1 {
             font-size: 3em;
-            margin: 0;
+            margin-bottom: 10px;
             text-shadow: 0 0 15px #000;
         }
 
         .text-content p {
             font-size: 1.2em;
-            margin-top: 20px; /* Več prostora pod naslovom */
             text-shadow: 0 0 10px #000;
         }
 
@@ -75,8 +74,8 @@
 
         .form-content h2 {
             color: #f5c842;
-            margin-bottom: 20px;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .form-content form {
@@ -88,27 +87,34 @@
         .form-content form input,
         .form-content form textarea,
         .form-content form button {
-            margin-bottom: 15px;
+            width: 100%;
+            max-width: 400px;
             padding: 10px;
+            margin-bottom: 15px;
             border: none;
             border-radius: 5px;
             background-color: #1c1c2e;
             color: #e8e4d6;
-            width: 100%;
-            max-width: 400px;
         }
 
         .form-content form button {
             background-color: #f5c842;
             color: #0f0f1a;
-            cursor: pointer;
             font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .form-content form button:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
         }
 
         .date-fields {
             display: flex;
             justify-content: space-between;
             gap: 10px;
+            width: 100%;
         }
 
         .date-fields input {
@@ -141,10 +147,11 @@
             display: none;
         }
 
-        /* Medijske poizvedbe za mobilne naprave */
+        /* Odzivnost za mobilne naprave */
         @media (max-width: 768px) {
             header {
-                height: 70vh;
+                height: 80vh;
+                padding: 10px;
             }
 
             .container {
@@ -154,15 +161,14 @@
 
             .text-content {
                 text-align: center;
-                margin-left: 0;
             }
 
             .text-content h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .text-content p {
-                font-size: 1em;
+                font-size: 1.1em;
             }
 
             .form-content {
@@ -178,7 +184,7 @@
             }
 
             .home-button {
-                font-size: 0.8em;
+                font-size: 0.9em;
                 padding: 8px 15px;
             }
         }
@@ -191,19 +197,13 @@
             <div class="text-content">
                 <h1>Arhetipska analiza</h1>
                 <p>
-                    Arhetipska analiza je raziskovanje simbolnih vzorcev in značilnosti, ki so vtkane v našo osebnost in življenje.
-                  V vašem življenju se vztrajno ponavljajo določene podobe, situacije in simboli – v sanjah, odnosih, izzivih. Naključja? Ne. Na Ključ Je. Ključ pa so prapodobe nezavednega – arhetipi, ki tkejo nevidne niti vaše zgodbe.
-
-Največkrat z arhetipsko analizo odkrivamo potlačene dele sebe – tiste, ki smo jih v otroštvu zatajili, se jih sramovali ali jih potisnili v nezavedno. Pogosto se razkrivajo skozi odnose z drugimi ljudmi, sanje in ponavljajoče se situacije. Senca je del nas, ki ga ne vidimo, a nas kljub temu oblikuje. Namesto da nas obvladuje iz ozadja, jo lahko sprejmemo in integriramo – in prav pri tem vam pomaga arhetipska analiza.
-
-Arhetipska analiza je edinstven sistem prepoznavanja življenjskih vzorcev. Pokaže vam prapodobe, ki oblikujejo vašo realnost, in sloni na Jungovem razumevanju arhetipov.
-
-Kaj vam prinaša arhetipska analiza?
-🔹 Prepoznavanje ponavljajočih se vzorcev v vašem življenju
-🔹 Razumevanje vaše Sence in njenega vpliva na vaše izbire
-🔹 Osebni vpogled v odločitve in iskanje prave poti
-🔹 Razlaga sanj kot okno v vaše nezavedno
-🔹 Prepoznavanje ključnih oseb v vašem življenju skozi prapodobe – arhetipe
+                    Arhetipska analiza je raziskovanje simbolnih vzorcev in značilnosti, ki so vtkane v našo osebnost in življenje.  
+                    V vašem življenju se vztrajno ponavljajo določene podobe, situacije in simboli – v sanjah, odnosih, izzivih. Naključja? **Ne. Na Ključ Je.**  
+                    Ključ pa so **prapodobe nezavednega – arhetipi**, ki tkejo nevidne niti vaše zgodbe.
+                </p>
+                <p>
+                    Največkrat z arhetipsko analizo **odkrivamo potlačene dele sebe** – tiste, ki smo jih v otroštvu **zatajili, se jih sramovali ali jih potisnili v nezavedno**. Pogosto se razkrivajo skozi odnose z drugimi ljudmi, sanje in ponavljajoče se situacije.  
+                    **Senca je del nas, ki ga ne vidimo, a nas kljub temu oblikuje.** Namesto da nas obvladuje iz ozadja, jo lahko **sprejmemo in integriramo** – in prav pri tem vam pomaga arhetipska analiza.
                 </p>
             </div>
             <div class="form-content">
