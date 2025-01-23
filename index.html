@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Odkrij moč arhetipov in Jungove psihologije. Samospoznavanje skozi zgodbe in arhetipsko analizo.">
     <title>Arhetipi in Jungova psihologija - Potovanje skozi sledi človeštva</title>
+    
+    <!-- Open Graph Meta podatki za družbena omrežja -->
+    <meta property="og:title" content="Arhetipi in Jungova psihologija – Razumevanje kolektivnega nezavednega">
+    <meta property="og:description" content="Odkrij moč arhetipov in Jungove psihologije. Samospoznavanje skozi zgodbe in arhetipsko analizo.">
+    <meta property="og:image" content="https://www.arhetipi.si/assets/Prvastran.webp">
+    <meta property="og:url" content="https://www.arhetipi.si">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema Markup za SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Arhetipi in Jungova psihologija",
+      "url": "https://www.arhetipi.si",
+      "author": {
+        "@type": "Person",
+        "name": "Uroš Erpič"
+      },
+      "description": "Odkrij moč arhetipov in Jungove psihologije. Samospoznavanje skozi zgodbe in arhetipsko analizo."
+    }
+    </script>
+    
     <style>
         body {
             margin: 0;
@@ -15,36 +38,36 @@
         }
 
         header {
-            background-image: <img src="Prvastran.JPG" alt="Arhetipi in Jungova psihologija" style="display:none;">
+            background-image: url('https://www.arhetipi.si/assets/Prvastran.webp');
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Poravna vsebino proti vrhu */
+            justify-content: flex-start;
             align-items: center;
             text-align: center;
             color: #f5c842;
-            padding-top: 5%; /* Nastavi razmik od vrha */
+            padding-top: 5%;
         }
 
         header h1 {
             font-size: 3.5em;
-            margin: 0 0 10px; /* Zmanjšan razmik pod naslovom */
+            margin: 0 0 10px;
             text-shadow: 0 0 15px #000;
         }
 
         header p {
             font-size: 1.5em;
-            margin-bottom: 30px; /* Zmanjšan razmik pod podnaslovom */
+            margin-bottom: 30px;
             text-shadow: 0 0 10px #000;
         }
 
         nav {
             display: flex;
             gap: 30px;
-            margin-top: 10px; /* Premik gumbov nižje */
-            flex-wrap: wrap; /* Omogoča zavijanje gumbov na manjših zaslonih */
+            margin-top: 10px;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
@@ -72,77 +95,25 @@
             color: #f5c842;
             font-size: 1em;
         }
-
-        /* Medijske poizvedbe za mobilne naprave */
-        @media (max-width: 768px) {
-            header {
-                height: 70vh; /* Manjša višina na manjših zaslonih */
-                padding-top: 10%;
-            }
-
-            header h1 {
-                font-size: 2em; /* Manjši naslov na mobilnih napravah */
-            }
-
-            header p {
-                font-size: 1em; /* Manjša pisava za podnaslov */
-            }
-
-            nav a {
-                font-size: 1em; /* Manjši gumbi */
-                padding: 8px 15px; /* Manjša razdalja znotraj gumbov */
-            }
-
-            footer {
-                font-size: 0.8em; /* Manjša pisava za footer */
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8em; /* Še manjši naslov za zelo majhne zaslone */
-            }
-
-            header p {
-                font-size: 0.9em; /* Manjša pisava za podnaslov */
-            }
-
-            nav {
-                gap: 15px; /* Manjša razdalja med gumbi */
-            }
-
-            nav a {
-                font-size: 0.9em;
-                padding: 6px 12px; /* Kompaktni gumbi */
-            }
-        }
     </style>
-    <meta property="og:title" content="Arhetipi in Jungova psihologija – Razumevanje kolektivnega nezavednega">
-<meta property="og:description" content="Odkrij moč arhetipov in Jungove psihologije. Samospoznavanje skozi zgodbe in arhetipsko analizo.">
-<meta property="og:image" content="URL_DO_TVOJE_SLIKE">
-<meta property="og:url" content="https://www.arhetipi.si">
-<meta property="og:type" content="website">
-
 </head>
 <body>
     <header>
         <h1>Arhetipi in Jungova psihologija – Razumevanje kolektivnega nezavednega</h1>
         <h2>O arhetipih in njihovem vplivu na življenje</h2>
-<h2>Kako poteka arhetipska analiza?</h2>
-<a href="blog.html">Preberite več o Jungovih arhetipih</a>
-
-        <a href="https://www.jordanbpeterson.com/docs/230/2014/06Jung.pdf" target="_blank">Več o Carlu Jungu</a>
-
-
+        <h2>Kako poteka arhetipska analiza?</h2>
         <p>Arhetipi, C.G. Jung in skrivnosti sveta.</p>
         <nav>
-            <!-- Povezave do ustreznih strani -->
-            <a href="Blog.html">Blog</a>
-            <a href="arhetipska-analiza.html">Arhetipska analiza</a>
+            <a href="blog.html" title="Blog o Jungovih arhetipih in psihologiji">Blog</a>
+            <a href="arhetipska-analiza.html" title="Analiza arhetipov za samospoznavanje">Arhetipska analiza</a>
             <a href="o-meni.html">O meni</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
+        
+        <!-- Skrita slika za SEO in lazy loading -->
+        <img src="https://www.arhetipi.si/assets/Prvastran.webp" alt="Arhetipi in Jungova psihologija" loading="lazy" style="display:none;">
     </header>
+    
     <footer>
         &copy; 2025 Uroš Erpič. Vse pravice pridržane.
     </footer>
