@@ -11,12 +11,11 @@
             font-family: 'Georgia', serif;
             background-color: #0f0f1a;
             color: #e8e4d6;
-            line-height: 1.6;
         }
 
         header {
             position: relative;
-            background-image: url('Arhetipska.jpg'); /* Pot do slike */
+            background-image: url('Arhetipska.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -26,108 +25,13 @@
             padding: 20px;
         }
 
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .container {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1200px;
-            width: 100%;
-            gap: 50px;
-            z-index: 2;
-        }
-
-        .text-content {
-            flex: 1;
-            color: #f5c842;
-            text-align: left;
-        }
-
-        .text-content h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px #000;
-        }
-
-        .text-content p {
-            font-size: 1.2em;
-            text-shadow: 0 0 10px #000;
-        }
-
-        .form-content {
-            flex: 1;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .form-content h2 {
-            color: #f5c842;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-content form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .form-content form input,
-        .form-content form textarea,
-        .form-content form button {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #1c1c2e;
-            color: #e8e4d6;
-        }
-
-        .form-content form button {
-            background-color: #f5c842;
-            color: #0f0f1a;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .form-content form button:hover {
-            background-color: #ffcc00;
-            transform: scale(1.05);
-        }
-
-        .date-fields {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .date-fields input {
-            flex: 1;
-        }
-
+        /* GUMB "DOMOV" */
         .home-button {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 20px;
             padding: 10px 20px;
             font-size: 1em;
-            font-family: 'Arial', sans-serif;
             color: #f5c842;
             text-decoration: none;
             border: 2px solid #f5c842;
@@ -142,52 +46,126 @@
             color: #0f0f1a;
         }
 
-        /* Honeypot field */
-        .honeypot {
-            display: none;
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1400px;
+            z-index: 2;
         }
 
-        /* Odzivnost za mobilne naprave */
-        @media (max-width: 768px) {
-            header {
-                height: 80vh;
-                padding: 10px;
-            }
-
-            .container {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .text-content {
-                text-align: center;
-            }
-
-            .text-content h1 {
-                font-size: 2.5em;
-            }
-
-            .text-content p {
-                font-size: 1.1em;
-            }
-
-            .form-content {
-                width: 100%;
-                padding: 15px;
-            }
-
-            .form-content form input,
-            .form-content form textarea,
-            .form-content form button {
-                max-width: 100%;
-                width: 90%;
-            }
-
-            .home-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-            }
+        /* LEVI STOLPEC - BESEDILO */
+        .text-content {
+            flex: 1.3;
+            color: #f5c842;
+            text-align: left;
+            max-width: 55%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 450px;
         }
+
+        .text-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .text-content p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .styled-list li {
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            color: #f5c842;
+        }
+
+        .styled-list li::before {
+            content: "🔸";
+            margin-right: 10px;
+        }
+
+        /* DESNI STOLPEC - OBRAZEC */
+        .form-content {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+            text-align: center;
+            min-height: 550px;
+            margin-left: auto;
+        }
+
+        .form-content h2 {
+            font-size: 1.8em;
+            color: #f5c842;
+            margin-bottom: 20px;
+        }
+
+        .form-content form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-content form label {
+            align-self: flex-start;
+            font-size: 1.1em;
+            color: #f5c842;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .form-content form input,
+        .form-content form textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1c1c2e;
+            color: #e8e4d6;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .form-content form button {
+            background-color: #f5c842;
+            color: #0f0f1a;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 14px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .form-content form button:hover {
+            background-color: #e0b02f;
+            transform: scale(1.05);
+        }
+
     </style>
 </head>
 <body>
@@ -197,31 +175,64 @@
             <div class="text-content">
                 <h1>Arhetipska analiza</h1>
                 <p>
-                    Arhetipska analiza je raziskovanje simbolnih vzorcev in značilnosti, ki so vtkane v našo osebnost in življenje.  
-                    V vašem življenju se vztrajno ponavljajo določene podobe, situacije in simboli – v sanjah, odnosih, izzivih. Naključja? **Ne. Na Ključ Je.**  
-                    Ključ pa so **prapodobe nezavednega – arhetipi**, ki tkejo nevidne niti vaše zgodbe.
+                    Arhetipska analiza je odkrivanje <span class="bold">simbolnih vzorcev in nezavednih struktur</span>. 
+                    Naša psiha je prepletena z <span class="bold">arhetipi</span> – univerzalnimi podobami, 
+                    ki oblikujejo naše misli, vedenje in odločitve.
                 </p>
-                <p>
-                    Največkrat z arhetipsko analizo **odkrivamo potlačene dele sebe** – tiste, ki smo jih v otroštvu **zatajili, se jih sramovali ali jih potisnili v nezavedno**. Pogosto se razkrivajo skozi odnose z drugimi ljudmi, sanje in ponavljajoče se situacije.  
-                    **Senca je del nas, ki ga ne vidimo, a nas kljub temu oblikuje.** Namesto da nas obvladuje iz ozadja, jo lahko **sprejmemo in integriramo** – in prav pri tem vam pomaga arhetipska analiza.
-                </p>
+
+                <ul class="styled-list">
+                    <li><span class="bold">Kaj se skriva v vaši senci?</span> – skriti deli vas, ki jih večina potlači.</li>
+                    <li><span class="bold">Katere arhetipe nosite v sebi?</span> – podobe in vloge, ki jih prevzemate v življenju.</li>
+                    <li><span class="bold">Kaj vam sporočajo vaše sanje?</span> – simboli, ki vam razkrivajo pot nezavednega.</li>
+                </ul>
+
+                <p>🔹 Vsak posameznik nosi v sebi nezavedne arhetipe, ki oblikujejo njegova prepričanja in odločitve.</p>
+                <p>🔹 Skozi interpretacijo sanj in analizo sence lahko pridemo do globljih vpogledov.</p>
+
             </div>
+
             <div class="form-content">
-                <h2>Izpolnite obrazec za analizo</h2>
-                <form action="https://formspree.io/f/xwppynor" method="POST">
-                    <input type="text" name="name" placeholder="Vaše ime" required>
-                    <input type="email" name="email" placeholder="Vaš email" required>
-                    <label for="birth-date" style="color: #f5c842;">Datum rojstva:</label>
-                    <div class="date-fields">
-                        <input type="number" name="birth-day" placeholder="Dan" min="1" max="31" required>
-                        <input type="number" name="birth-month" placeholder="Mesec" min="1" max="12" required>
-                        <input type="number" name="birth-year" placeholder="Leto" min="1900" max="2025" required>
-                    </div>
-                    <textarea name="arhetip" rows="5" placeholder="Vaša vprašanja ali podatki za analizo" required></textarea>
-                    <input type="text" name="honeypot" class="honeypot">
-                    <button type="submit">Pošlji za analizo</button>
-                </form>
-            </div>
+    <h2>Izpolnite obrazec za analizo</h2>
+    <form action="https://formspree.io/f/xwppynor" method="POST" onsubmit="return validateForm()">
+        
+        <label for="name">Vaše ime:</label>
+        <input type="text" id="name" name="name" placeholder="Vaše ime" required>
+
+        <label for="email">Vaš email:</label>
+        <input type="email" id="email" name="email" placeholder="Vaš email" required>
+
+        <label for="birth-date">Datum rojstva:</label>
+        <div class="date-fields">
+            <input type="number" id="birth-day" name="birth-day" placeholder="Dan" min="1" max="31" required>
+            <input type="number" id="birth-month" name="birth-month" placeholder="Mesec" min="1" max="12" required>
+            <input type="number" id="birth-year" name="birth-year" placeholder="Leto" min="1900" max="2025" required>
+        </div>
+
+        <label for="message">Vaše sporočilo:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Napišite svoje sanje, vprašanja ali izkušnje..." required></textarea>
+
+        <!-- Honeypot polje (skrito pred uporabniki, vidno botom) -->
+        <div style="position: absolute; left: -9999px;">
+            <label for="honeypot">Ne izpolnjujte tega polja:</label>
+            <input type="text" id="honeypot" name="honeypot">
+        </div>
+
+        <button type="submit">Pošlji za analizo</button>
+    </form>
+</div>
+
+<!-- 🔐 JavaScript za validacijo honeypot polja -->
+<script>
+    function validateForm() {
+        var honeypot = document.getElementById("honeypot").value;
+        if (honeypot) {
+            alert("Napaka: Vaša prijava je bila zavrnjena zaradi suma avtomatskega vnosa.");
+            return false; // Prepreči pošiljanje obrazca
+        }
+        return true; // Obrazec se normalno pošlje
+    }
+</script>
+
         </div>
     </header>
 </body>
